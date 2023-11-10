@@ -2,6 +2,7 @@
 
 set -e
 
+git rev-parse HEAD > $1/git_sha1
 
 mkdir -p $1/repos
 cd $1/repos
