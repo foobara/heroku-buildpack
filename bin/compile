@@ -2,7 +2,7 @@
 
 set -e
 
-git rev-parse HEAD > $1/git_sha1
+git show -s --format='{"commit": "%H", "author": "%an <%ae>", "date": "%ad", "message": "%s"}' HEAD > $1/git_commit_info.json
 
 mkdir -p $1/repos
 cd $1/repos
