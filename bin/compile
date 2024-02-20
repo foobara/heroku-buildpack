@@ -18,4 +18,4 @@ cd ..
 mkdir -p .bundle
 echo -e "---" > .bundle/config
 echo -e "BUNDLE_LOCAL__FOOBARA: repos/foobara" >> .bundle/config
-echo -e "BUNDLE_LOCAL__RACK___CONNECTOR: repos/rack-connector" >> .bundle/config
+echo -e "BUNDLE_LOCAL__FOOBARA___RACK___CONNECTOR: repos/rack-connector" >> .bundle/config
