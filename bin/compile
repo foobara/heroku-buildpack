@@ -9,13 +9,11 @@ cd $1/repos
 
 oauth=`cat $3/GITHUB_OAUTH`
 
-# TODO: just publish these as gems somewhere. Or consider depth 1 hacks, etc.
+# TODO: just publish this as a gem
 git clone https://$oauth@github.com/foobara/foobara.git
-git clone https://$oauth@github.com/foobara/rack-connector.git
 
 cd ..
 
 mkdir -p .bundle
 echo -e "---" > .bundle/config
 echo -e "BUNDLE_LOCAL__FOOBARA: repos/foobara" >> .bundle/config
-echo -e "BUNDLE_LOCAL__FOOBARA___RACK___CONNECTOR: repos/rack-connector" >> .bundle/config
