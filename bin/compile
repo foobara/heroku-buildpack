@@ -2,18 +2,12 @@
 
 set -e
 
+echo "going to dump git info"
+
 git show -s --format='{"commit": "%H", "author": "%an <%ae>", "date": "%ad", "message": "%s"}' HEAD > $1/git_commit_info.json
 
-mkdir -p $1/repos
-cd $1/repos
+echo "git info dumped"
 
-oauth=`cat $3/GITHUB_OAUTH`
+cat $1/git_commit_info.json
 
-# TODO: just publish this as a gem
-git clone https://$oauth@github.com/foobara/foobara.git
-
-cd ..
-
-mkdir -p .bundle
-echo -e "---" > .bundle/config
-echo -e "BUNDLE_LOCAL__FOOBARA: repos/foobara" >> .bundle/config
+echo "quiting"
